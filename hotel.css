@@ -1,0 +1,161 @@
+body {
+  background-color: rgb(158, 145, 80);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  position: relative;
+  margin: 0;
+  width: 100vw;
+  aspect-ratio: 4552/2392;
+}
+
+.hotel {
+  position: absolute;
+  width: 100vw;
+}
+
+#vegasBackdrop {
+  z-index: -3;
+}
+
+#hotel {
+  z-index: -1;
+}
+
+#hotelRoomTop {
+  z-index: 1;
+}
+
+#eagleRat {
+  position: absolute;
+  width: 20%;
+  top: 10%;
+  left: 10%;
+  z-index: -2;
+  animation: eagleFly 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes eagleFly {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  10% {
+    transform: translateX(25%) translateY(-10%);
+  }
+  20% {
+    transform: translateX(50%) translateY(10%);
+  }
+  30% {
+    transform: translateX(75%) translateY(-5%);
+  }
+  40% {
+    transform: translateX(100%) translateY(0%);
+  }
+  50% {
+    transform: translateX(125%) translateY(-15%);
+  }
+  60% {
+    transform: translateX(150%) translateY(0%);
+  }
+  70% {
+    transform: translateX(175%) translateY(-20%);
+  }
+  80% {
+    transform: translateX(200%) translateY(-10%);
+  }
+  90% {
+    transform: translateX(225%) translateY(-20%);
+  }
+  100% {
+    transform: translateX(250%) translateY(-0%);
+  }
+}
+.tigerContainer {
+  fill: aqua;
+}
+
+#tiger {
+  visibility: visible;
+  position: absolute;
+  width: 30%;
+  top: 20%;
+  left: 40%;
+  z-index: 0;
+}
+
+#tigerRun {
+  visibility: hidden;
+  position: absolute;
+  transform: scaleX(-1);
+  width: 55%;
+  top: 30%;
+  left: 30%;
+  z-index: 0;
+}
+
+#cautionSign {
+  position: absolute;
+  width: 15%;
+  top: 56%;
+  left: 0%;
+  z-index: 2;
+}
+
+#assaultRifle {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 40%;
+  z-index: 3;
+}
+
+.tigerContainer:hover #tiger {
+  visibility: hidden;
+}
+
+.tigerContainer:hover #tigerRun {
+  visibility: visible;
+  animation: tigerEscape 10s linear;
+}
+
+@keyframes tigerEscape {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  3% {
+    transform: translateX(-50%);
+  }
+  10% {
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    transform: translateX(50%) translateY(100%);
+  }
+}
+
+.tigerContainer:hover #assaultRifle {
+  visibility: visible;
+  animation: showGuns 0.5s forwards;
+}
+
+@keyframes showGuns {
+  0% {
+    transform: translateY(50%) translateX(0);
+  }
+  100% {
+    transform: translateY(15%);
+  }
+}
+
+#exit{
+  position: absolute;
+  z-index: 2;
+  width: 10%;
+  top: 85%;
+  left: 88%;
+}

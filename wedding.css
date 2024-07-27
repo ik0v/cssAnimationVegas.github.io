@@ -1,0 +1,317 @@
+body {
+  margin: 0;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  margin: 0;
+  width: 100vw;
+  aspect-ratio: 1200/800;
+}
+
+#sky {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#wedding {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+.eagle {
+  position: absolute;
+  width: 15%;
+  top: 15%;
+  left: 12%;
+  z-index: 2;
+  animation: flyingEagle 6s forwards;
+}
+
+@keyframes flyingEagle {
+  from {
+    left: 12%;
+  }
+  to {
+    left: 75%;
+  }
+}
+
+.couple {
+  position: absolute;
+  width: 20%;
+  z-index: 4;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation-name: coupleWalk;
+  animation-duration: 22s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes coupleWalk {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -70%) scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -94%) scale(0.5);
+  }
+}
+
+.celebration {
+  position: absolute;
+  width: 12%;
+  left: 42.5%;
+  top: 40%;
+  z-index: 4;
+  opacity: 0;
+  animation: celebrate 1ms forwards;
+  animation-delay: 22s;
+}
+
+@keyframes celebrate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cardOne {
+  position: absolute;
+  width: 25%;
+  top: 25%;
+  left: 10%;
+  animation-name: showCard, removeCard;
+  animation-duration: 12s, 5s;
+  animation-timing-function: ease-in, ease-out;
+  animation-delay: 3s, 12s;
+  animation-iteration-count: 1, 1;
+  opacity: 0;
+  z-index: 4;
+}
+
+.cardTwo {
+  position: absolute;
+  width: 25%;
+  top: 25%;
+  left: 64%;
+  animation-name: showCard, removeCard;
+  animation-duration: 12s, 5s;
+  animation-timing-function: ease-in, ease-out;
+  animation-delay: 3s, 12s;
+  animation-iteration-count: 1, 1;
+  opacity: 0;
+  z-index: 4;
+}
+
+@keyframes showCard {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes removeCard {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+h3 {
+  position: absolute;
+  border: 5px solid black;
+  padding: 5px;
+  top: 87%;
+  left: 45%;
+  text-align: center;
+  font-family: sans-serif;
+  animation-name: leave;
+  animation-duration: 12s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  opacity: 1;
+  z-index: 4;
+}
+
+h3:hover {
+  transform: scale(1.1);
+}
+
+@keyframes leave {
+  0% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    animation-play-state: paused;
+  }
+}
+
+.champagne {
+  position: absolute;
+  width: 10%;
+  top: 48.25%;
+  left: 37%;
+  animation-name: man;
+  animation-duration: 0.05s;
+  animation-timing-function: linear;
+  animation-delay: 18s;
+  animation-iteration-count: 1;
+  z-index: 4;
+}
+
+@keyframes man {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(60deg);
+  }
+}
+
+.kork {
+  position: absolute;
+  width: 0.5%;
+  top: 50.5%;
+  left: 46.5%;
+  opacity: 0;
+  animation-name: champagnePop;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 18s;
+  animation-iteration-count: 1;
+  z-index: 4;
+}
+
+@keyframes champagnePop {
+  0% {
+    top: 50.5%;
+    left: 46.5%;
+  }
+  5% {
+    top: 50.5%;
+    left: 46.5%;
+    opacity: 1;
+  }
+  50% {
+    top: 34%;
+    left: 58%;
+  }
+  70% {
+    top: 45%;
+    left: 60%;
+  }
+  90% {
+    top: 51%;
+    left: 57.5%;
+    opacity: 1;
+  }
+  100% {
+    top: 56%;
+    left: 58%;
+    opacity: 0;
+  }
+}
+
+.woman {
+  position: absolute;
+  width: 7%;
+  top: 48.5%;
+  left: 52.5%;
+  animation-name: womanAppearance, womanFall;
+  animation-duration: 20s, 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s, 20s;
+  animation-iteration-count: 1;
+  opacity: 0;
+  z-index: 4;
+}
+
+@keyframes womanAppearance {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes womanFall {
+  from {
+    animation-delay: 5s;
+    transform: rotateZ(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateZ(90deg);
+    opacity: 0;
+    top: 55%;
+  }
+}
+
+.firework {
+  position: absolute;
+  width: 18%;
+  top: 25%;
+  left: 40%;
+  opacity: 0;
+  animation-name: firework;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 20s;
+  animation-iteration-count: 1;
+  z-index: 4;
+}
+
+@keyframes firework {
+  0% {
+    top: 38%;
+    left: 44%;
+    opacity: 0;
+  }
+  10% {
+    top: 33%;
+    left: 44%;
+    opacity: 1;
+  }
+  95% {
+    width: 25%;
+    top: 25%;
+    left: 40%;
+    opacity: 1;
+  }
+  100% {
+    width: 25%;
+    top: 25%;
+    left: 40%;
+    opacity: 0;
+  }
+}

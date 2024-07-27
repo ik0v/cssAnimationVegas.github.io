@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Las Vegas show</title>
+    <!-- Lenke til ekstern CSS-fil for styling -->
+    <link rel="stylesheet" href="show.css" />
+  </head>
+  <body>
+    <!-- Navigasjonsknapp tilbake til startsiden -->
+    <button class="myButton"><a href="vegas.html">Click me</a></button>
+    <!-- Bakgrunnsmusikk -->
+    <audio id="backgroundAudio" autoplay loop>
+      <!-- Lydkilde og lydtype -->
+      <source src="audio/elvis.mp3" type="audio/mpeg" class="audio" />
+    </audio>
+    <!-- Hovedinnholdscontainer -->
+    <div class="container">
+      <!-- Animerende overskrift -->
+      <div class="h1 hover-effect">showroom</div>
+      <!-- Bilde av Elvis -->
+      <label for="audioControl">
+        <img src="images/elvis.png" class="image" alt="elvis" />
+      </label>
+      <!-- Snakkeboble med et sitat -->
+      <div class="tankeboble" id="tankeboble">
+        Man, I was tame compared to what they do now. Are you kidding? I didn’t
+        do anything but just jiggle.
+      </div>
+    </div>
+  </body>
+</html>

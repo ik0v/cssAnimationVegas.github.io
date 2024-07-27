@@ -1,0 +1,621 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}   
+
+#bgrImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#impalaEntry {
+    position: absolute;
+    animation: impalaEntry 4s ease-in-out running forwards
+} 
+
+#impalaLeaving {
+    position: absolute;
+    animation: impalaLeaving 5s ease-in-out paused 26s forwards
+} 
+
+@keyframes impalaEntry  {
+    0% {
+        width: 4.5%;
+        right: -100px;
+        bottom: 25%;
+    } 100% {
+        width: 5.6%;
+        right: 35%;
+        bottom: 43%;
+    }
+}
+
+@keyframes impalaLeaving {
+    0% {
+        display: none;
+    } 1% {
+        display: block;
+        width: 6%;
+        right: 35%;
+        bottom: 43%;
+        opacity: 1;
+    } 100% {
+        width: 2%;
+        right: 90%;
+        bottom: 75%;
+        opacity: 0;
+    }
+}
+
+#donutStatus:checked ~ #startDonut {
+    display: none;
+}
+
+#donutStatus:checked ~ #impalaEntry {
+    display: none;
+}
+
+#donutStatus:checked ~ #impalaLeaving {
+    animation-play-state: running;
+}
+
+#donutStatus:checked ~ .impala {
+    animation-play-state: running;
+}
+
+#donutStatus:checked ~ .bubbleAnimation {
+    animation-play-state: running;
+}
+
+#donutStatus:checked ~ #police {
+    animation-play-state: running;
+} 
+
+#donutStatus:checked ~ .button {
+    animation-play-state: running;
+} 
+
+#donutStatus {
+    right: 50%;
+    bottom: 70%; 
+}
+
+input {
+    position: absolute;
+    display: none;
+    width: 2%;
+    height: 2%;
+}
+
+#donutImg {
+    position: absolute;
+    width: 20%;
+    right: 40%;
+    bottom: 70%; 
+    cursor: pointer;
+    opacity: 0;
+    animation: pulsing 2s linear 5s infinite running;
+}
+
+.button {
+    /* display: none;  */
+    border: 2px solid;
+    border-radius: 10%;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    animation: hideButtons 1s linear paused;
+}
+
+@keyframes hideButtons {
+    0% { 
+        opacity: 1;
+    } 100% { 
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes showButtons {
+    0% { 
+        display: none;
+    } 99% {
+        display: none;
+    } 100% { 
+        display: block;
+    }
+}
+
+.nextPageCheckbox:checked ~ .button {
+    animation-name: hideButtons;
+    animation-play-state: running;
+} 
+
+/* .nextPageCheckbox:checked ~ #impala0 {
+    display: none;
+}  */
+
+/* .nextPageCheckbox:checked ~ #impalaLeaving {
+    animation-play-state: running;
+}  */
+
+.nextPageCheckbox:checked ~ #goToCasino,
+.nextPageCheckbox:checked ~ #goToHotel,
+.nextPageCheckbox:checked ~ #goToWedding, 
+.nextPageCheckbox:checked ~ #backToDesert,
+.nextPageCheckbox:checked ~ #goToShow {
+    animation-name: showButtons;
+    animation-play-state: paused;
+} 
+
+#goToHotel {
+    position: absolute;
+    right: 56.5%;
+    bottom: 66%; 
+    cursor: pointer;
+    animation-name: pulsing, showButtons;
+    animation-duration: 2s, 30s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: none, forwards;
+    animation-iteration-count: infinite, 1;
+    animation-play-state: paused, paused;
+}   
+
+#hotelChoice {
+    right: 58%;
+    bottom: 62.5%; 
+}
+
+#goToCasino {
+    position: absolute;
+    right: 48%;
+    bottom: 62%; 
+    cursor: pointer;
+    animation-name: pulsing, showButtons;
+    animation-duration: 2s, 30s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: none, forwards;
+    animation-iteration-count: infinite, 1;
+    animation-play-state: paused, paused;
+}
+
+#casinoChoice {
+    right: 50%;
+    bottom: 58.5%; 
+}
+
+#goToWedding {
+    position: absolute;
+    right: 65%;
+    bottom: 70%; 
+    cursor: pointer;
+    animation-name: pulsing, showButtons;
+    animation-duration: 2s, 30s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: none, forwards;
+    animation-iteration-count: infinite, 1;
+    animation-play-state: paused, paused;
+}
+
+#weddingChoice {
+    right: 67%;
+    bottom: 67%; 
+}
+
+#backToDesert {
+    position: absolute;
+    right: 50%;
+    bottom: 35%; 
+    cursor: pointer;
+    animation-name: pulsing, showButtons;
+    animation-duration: 2s, 30s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: none, forwards;
+    animation-iteration-count: infinite, 1;
+    animation-play-state: paused, paused;
+}
+
+#desertChoice {
+    right: 52%;
+    bottom: 31%; 
+}
+
+#goToShow {
+    position: absolute;
+    right: 74.5%;
+    bottom: 74.5%; 
+    cursor: pointer;
+    animation-name: pulsing, showButtons;
+    animation-duration: 2s, 30s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: none, forwards;
+    animation-iteration-count: infinite, 1;
+    animation-play-state: paused, paused;
+}
+
+#showChoice {
+    right: 76%;
+    bottom: 71%; 
+}
+
+@keyframes pulsing {
+    0% { 
+        opacity: 0.5;
+    } 
+    50% { 
+        opacity: 1;
+        transform: scale(1.2);
+    } 
+    100% { 
+        opacity: 0.5;
+    }
+}
+
+.impala {
+    position: absolute;
+    visibility: visible;
+}
+
+#impala0 {
+    animation-name: impala8;
+    animation-duration: 10s;
+    animation-delay: 20.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+} 
+
+#impala1 {
+    position: absolute;
+    animation-name: impala1, impala1, impala1;
+    animation-duration: 0.7s, 0.7s, 0.4s;
+    animation-delay: 0s, 1.9s, 3.8s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes impala1 {
+    0% {
+        width: 4.2%;
+        right: 39%;
+        bottom: 44%;
+        opacity: 0;
+    } 50% { 
+        width: 4.6%;
+        right: 39%;
+        bottom: 46%;
+        opacity: 1;
+    } 100% {
+        width: 4%;
+        right: 45%;
+        bottom: 48%;
+        opacity: 0;
+    }
+}
+
+#impala2 {
+    animation-name: impala2, impala2;
+    animation-duration: 1s, 1s;
+    animation-delay: 0.28s, 2.23s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes impala2 {
+    0% {
+        width: 5%;
+        right: 41%;
+        bottom: 47%;
+        opacity: 0;
+    } 50% { 
+        width: 5%;
+        right: 46%;
+        bottom: 48%;
+        opacity: 1;
+    } 100% {
+        width: 4.5%;
+        right: 48%;
+        bottom: 46%;
+        opacity: 0;
+    }
+}
+
+#impala3 {
+    animation-name: impala3, impala3;
+    animation-duration: 1s, 1s;
+    animation-delay: 0.7s, 2.65s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes impala3 {
+    0% {
+        width: 4%;
+        right: 47%;
+        bottom: 47%;
+        opacity: 0;
+    } 50% { 
+        width: 4%;
+        right: 52%;
+        bottom: 44%;
+        opacity: 0.9;
+        transform: rotateY(30deg);
+    } 85% {
+        opacity: 0;
+    } 100% {
+        width: 4.5%;
+        right: 47%;
+        bottom: 40%;
+        opacity: 0;
+        transform: rotateY(75deg);
+    }
+}
+
+#impala4 {
+    animation-name: impala4, impala4;
+    animation-duration: 1.2s, 1.2s;
+    animation-delay: 1.13s, 3.08s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes impala4 {
+    0% {
+        width: 4.5%;
+        right: 52%;
+        bottom: 44%;
+        opacity: 0;
+    } 50% { 
+        width: 4%;
+        right: 43%;
+        bottom: 41%;
+        opacity: 1;
+
+    } 80% {
+        opacity: 0;   
+    } 100% {
+        width: 3.8%;
+        right: 40%;
+        bottom: 45%;
+        opacity: 0;
+    }
+}
+
+#impala5 {
+    animation-name: impala5, impala5;
+    animation-duration: 1s, 1s;
+    animation-delay: 1.65s, 3.6s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes impala5 {
+    0% {
+        width: 4.5%;
+        right: 45%;
+        bottom: 40%;
+        opacity: 0;
+    } 50% {
+        width: 4.2%;
+        right: 40%;
+        bottom: 43%;
+        opacity: 1;
+    } 100% {
+        width: 4%;
+        right: 37%;
+        bottom: 45%;
+        opacity: 0;
+        transform: rotateY(60deg);
+    } 
+}
+
+#impala6 {
+    animation-name: impala6, impala7;
+    animation-duration: 0.6s, 0.6s;
+    animation-delay: 3.85s, 20.5s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes impala6 {
+    0% {
+        width: 4%;
+        right: 40%;
+        bottom: 44%;
+        opacity: 0;
+        transform: rotatex(20deg);
+    } 100% {
+        width: 5%;
+        right: 41%;
+        bottom: 48%;
+        opacity: 1;
+        transform: rotateY(0deg);
+    } 
+}
+
+@keyframes impala7 {
+    0% {
+        width: 5%;
+        right: 41%;
+        bottom: 48%;
+        opacity: 1;
+        transform: rotateY(0deg);
+    } 100% {
+        width: 4%;
+        right: 35%;
+        bottom: 43%;
+        opacity: 0;
+        transform: rotatex(20deg);
+    } 
+}
+
+@keyframes impala8 {
+    0% {
+        width: 4%;
+        right: 41%;
+        bottom: 48%;
+        opacity: 0;
+    } 10% {
+        width: 6%;
+        right: 35%;
+        bottom: 43%;
+        opacity: 1;
+    } 99% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+
+}
+
+#police {
+    position: absolute;
+    animation-name: police1, police2, police3;
+    animation-duration: 4s, 3s, 5s;
+    animation-delay: 5s, 20s, 24s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards, forwards, forwards;
+}
+
+@keyframes police1 {
+    0% {
+        width: 2%;
+        right: 85%;
+        bottom: 72%;
+        opacity: 0;
+    } 100% {
+        width: 5.5%;
+        right: 46%;
+        bottom: 48%;
+        opacity: 1;
+    } 
+}
+
+@keyframes police2 {
+    0% {
+        width: 5.5%;
+        right: 46%;
+        bottom: 48%;
+        opacity: 1;
+    } 50% {
+        width: 6%;
+        right: 41%;
+        bottom: 46%;
+        opacity: 1;
+    } 100% {
+        width: 5.5%;
+        right: 46%;
+        bottom: 48%;
+        opacity: 1;
+    } 
+}
+
+@keyframes police3 {
+    0% {
+        width: 5.5%;
+        right: 46%;
+        bottom: 48%;
+        opacity: 1;
+    } 17% {
+        width: 5%;
+        right: 44%;
+        bottom: 40%;
+        opacity: 1;
+    } 100% {
+        width: 3.8%;
+        right: -200px;
+        bottom: 12%;
+        opacity: 1;
+    } 
+}
+
+#bubble1 {
+    position: absolute;
+    width: 12%;
+    right: 41%; 
+    bottom: 54%; 
+    opacity: 0;
+    animation: bubble 3s paused ease-in-out 9.5s 1;
+}
+
+@keyframes bubble {
+    0% {
+        opacity: 0;
+    } 50% {
+        opacity: 0.85;
+    } 100% {
+        opacity: 0;
+    } 
+}
+
+#bubble2 {
+    position: absolute;
+    width: 12%;
+    right: 35%; 
+    bottom: 51%; 
+    opacity: 0;
+    animation: bubble 3s paused ease-in-out 12.5s 1;
+}
+
+#bubble3 {
+    position: absolute;
+    width: 12%;
+    right: 41%; 
+    bottom: 54%; 
+    opacity: 0;
+    animation: bubble 3s paused ease-in-out 15s 1;
+}
+
+#bubble4 {
+    position: absolute;
+    width: 12%;
+    right: 41%; 
+    bottom: 54%; 
+    opacity: 0;
+    animation: bubble 3s paused ease-in-out 17.5s 1;
+}
+
+#bubble5 {
+    position: absolute;
+    width: 12%;
+    right: 31%; 
+    bottom: 48%; 
+    opacity: 0;
+    animation: bubble 5s paused ease-in-out 23s 1;
+}
+
+.bubble {
+    position: relative;
+    text-align: center;
+    width: 100%; 
+}
+
+.bubbleText {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #462828;
+    font-size: 2.2vh; 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+}
+
+
+
+
+
+
+

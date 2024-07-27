@@ -1,0 +1,98 @@
+/* Bakgrunnsbilde for hele siden */
+body {
+    background-image: url("images/GrandSHOW.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* Stil for overskriften */
+.h1 {
+    color: rgb(104, 102, 102);
+    font-family: "Garamond", Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Skalér opp overskriften ved hover */
+.h1:hover {
+    transform: scale(1.1);
+}
+
+/* Stil for bildet */
+.image {
+    width: 10%;
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom: 34%;
+    left: 100%;
+    transform: translateX(-5%);
+    transition: transform 0.3s ease;
+    background-color: transparent;
+
+    /* Animasjon for å bringe bildet fra utenfor høyre side av skjermen til sin angitte posisjon */
+    -webkit-animation: img 8s forwards; /* Keep the final state after animation */
+    animation: img 8s forwards; /* Keep the final state after animation */
+}
+
+.image:hover {
+    transform: translate(1%, -1%) scale(1.1);
+}
+
+@-webkit-keyframes img {
+    0% {
+        right: 200%; /* Start from outside the right side of the screen */
+    }
+    100% {
+        right: 0; /* Move to the specified position */
+    }
+}
+
+@keyframes img {
+    0% {
+        right: 100%; /* Start from outside the right side of the screen */
+    }
+    100% {
+        left: 75%; /* Move to the specified position */
+    }
+}
+
+/* Stil for tankeboble */
+.tankeboble {
+    background-color: #b5bbc2;
+    padding: 10px;
+    border-radius: 10% 30%; /* Gjør tankeboblen oval  */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s;
+    top: 40%;
+    left: 70%;
+}
+
+.container:hover .tankeboble {
+    opacity: 1;
+}
+
+.myButton {
+    /* Legg til ønskede stiler for knappen */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(57, 18, 119); /* Grønn farge, kan endres etter behov */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Legg til hover-effekt for interaktivitet */
+.myButton:hover {
+    background-color: #99b699; /* Mørkere grønn farge ved hover, kan endres etter behov */
+}
+

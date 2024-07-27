@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('images/casino3.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+} 
+
+.smoke{
+    width: 5vw;
+    height: auto;
+    margin-left: 34vw;
+    margin-top: 17%;
+    position: fixed;
+    animation: smokeAnimation 10s infinite;
+}
+
+@keyframes smokeAnimation {
+    from{
+        top: 6%;
+    } 
+    to {
+        top: -100%
+    }
+} 
+
+.waiter{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    margin-top: 100px;
+    margin-left: -30vw;
+    animation: waiterAnimation 40s linear infinite;
+} 
+
+@keyframes waiterAnimation {
+    0%, 100% {
+        transform: translateX(0) scaleX(1);
+    } 
+    25% {
+        transform: translateX(75%) scaleX(1);
+    } 
+    50% {
+        transform: translateX(100vw) scaleX(-1);
+    } 
+    75% {
+        transform: translate(calc(-100vw + 100px)) scaleX(-1);
+    }
+} 
+ 
+.navbar:hover {
+    background-color: blueviolet;
+} 
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
+
+.navbar ul li {
+    display: inline;
+} 
+
+.navbar ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 50px;
+} 
+
+.navbar ul li a:hover {
+    color: white;
+}

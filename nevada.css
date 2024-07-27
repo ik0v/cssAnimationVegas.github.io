@@ -1,0 +1,275 @@
+body {
+  /*gakgrundsfarge som passer ok med bildet i tilfellet nettleseren har for 
+  smal aspect ratio*/
+  background-color: rgb(179, 84, 33);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#btn {
+  /*Dettee er en usynlig "knapp" plassert over veiskiltet*/
+  position: absolute;
+  height: 13%;
+  width: 16%;
+  z-index: 3;
+  background-color: black;
+  top: 65.5%;
+  left: 77%;
+  opacity: 0%;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  margin: 0;
+  width: 100vw;
+  /*aspect ratio til bakgrundsbilde*/
+  aspect-ratio: 4552/2392;
+}
+
+#background {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#txtBox {
+  position: absolute;
+  width: 30%;
+  height: 20%;
+  left: 77%;
+  top: 50%;
+  z-index: 3;
+  text-align: justify;
+  font-size: 2vw;
+  font-family: sans-serif;
+  color: rgb(255, 251, 0);
+  opacity: 0;
+  animation: txtMove 0.5s linear infinite;
+  animation-delay: 8s;
+}
+
+.lights {
+  /*plasserte to bilder jeg lagde av "lys" med vekslende farge på samme sted.*/
+  position: absolute;
+  width: 20%;
+  left: 75%;
+  top: 62.5%;
+  position: absolute;
+  width: 20%;
+  left: 75%;
+  top: 62.5%;
+  opacity: 0;
+}
+
+
+/*animerer sp de vises om hverandre så det ser ut som blinking.*/
+#lights1 {
+  animation: light1Move 1s linear infinite;
+  animation-delay: 8s;
+  z-index: 1;
+}
+
+#lights2 {
+  animation: light2Move 1s linear infinite;
+  animation-delay: 8s;
+  z-index: 2;
+}
+
+#sun {
+  position: absolute;
+  width: 40%;
+  top: -12%;
+  opacity: 80%;
+  z-index: 3;
+}
+
+#car {
+  position: absolute;
+  width: 28%;
+  left: 68%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: carMove 8s linear forwards;
+}
+
+#bean {
+  position: absolute;
+  width: 12%;
+  top: 63%;
+  left: 5%;
+  z-index: 3;
+  opacity: 1;
+  animation: beanMove 1ms forwards;
+  animation-delay: 3s;
+}
+
+#bean2 {
+  position: absolute;
+  width: 10%;
+  top: 63%;
+  left: 7%;
+  z-index: 3;
+  opacity: 0;
+  animation: bean2Move 1ms forwards;
+  animation-delay: 3s;
+}
+
+#eagle {
+  position: absolute;
+  width: 10%;
+  left: -10%;
+  top: 15%;
+  z-index: 2;
+  animation: eagleMove 4s linear;
+  animation-delay: 4s;
+}
+
+#mouse {
+  position: absolute;
+  width: 4%;
+  top: 70%;
+  left: 43%;
+  z-index: 1;
+  animation: mouseMove 2s linear forwards;
+  animation-delay: 6s;
+}
+
+#tumbleweed {
+  position: absolute;
+  width: 10vw;
+  top: 80%;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: tumbleweedMove 10s linear infinite;
+}
+
+#welcome {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 27%;
+  z-index: 4;
+  animation: welcomeMove 2s linear forwards;
+  animation-delay: 8s;
+  opacity: 0;
+}
+
+/*animasjon for å få mr bean til å snu seg.*/
+@keyframes beanMove {
+  0% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes bean2Move {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/*animasjon for blinking av lys og tekst*/
+@keyframes light1Move {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+@keyframes light2Move {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes txtMove {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*Las Vegas skilt animasjon*/
+@keyframes welcomeMove {
+  0% {
+    opacity: 0;
+    transform: scale(0.01);
+  }
+  100% {
+    opacity: 100;
+    transform: scale(1.35);
+  }
+}
+
+/*bil som kjører*/
+@keyframes carMove {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  60% {
+    transform: translate(-112%, -170%) scale(0.04);
+  }
+  100% {
+    transform: translate(-113.5%, -182%) scale(0.001);
+  }
+}
+
+/*mus som må bevege seg sammen med ørn når de møtes*/
+@keyframes mouseMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translateX(1710%) translateY(-1100%);
+  }
+}
+
+/*flyvende ørn*/
+@keyframes eagleMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(525%) translateY(350%);
+  }
+  100% {
+    transform: translateX(1200%);
+  }
+}
+
+/*tumbleweed som ruller over skjærmen som i en western film.*/
+@keyframes tumbleweedMove {
+  0% {
+    transform: translateX(-60vw) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-30vw) rotate(360deg);
+  }
+  50% {
+    transform: translateX(0vw) rotate(720deg);
+  }
+  75% {
+    transform: translateX(30vw) rotate(1080deg);
+  }
+  100% {
+    transform: translateX(60vw) rotate(1440deg);
+  }
+}
